@@ -1,0 +1,30 @@
+{
+  "name": "missivus-ghost-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Missivus for Ghost — send Ghost transactional email through Microsoft Graph with application permissions and a shared mailbox.",
+  "license": "GPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Solvetus/missivus-ghost.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "packages/graph-transport",
+    "packages/ghost"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "test": "npm test --workspaces",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@types/node": "^24.3.0",
+    "eslint": "^9.33.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.39.1"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "@missivus/ghost",
+  "version": "0.1.0",
+  "description": "Missivus for Ghost — send Ghost transactional email through Microsoft Graph with application permissions and a shared mailbox. Runs as a local SMTP-to-Graph shim that Ghost's own SMTP transport points at.",
+  "license": "GPL-3.0-or-later",
+  "author": "Solvetus (https://solvetus.com)",
+  "homepage": "https://missivus.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Solvetus/missivus-ghost.git",
+    "directory": "packages/ghost"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "missivus-ghost": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "ghost",
+    "ghost-cms",
+    "microsoft-graph",
+    "mail",
+    "smtp",
+    "transactional-email",
+    "shared-mailbox",
+    "missivus"
+  ],
+  "dependencies": {
+    "@missivus/graph-transport": "0.1.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "node --test src/",
+    "prepack": "npm run build"
+  }
+}

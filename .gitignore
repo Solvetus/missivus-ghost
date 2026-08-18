@@ -1,0 +1,15 @@
+node_modules/
+dist/
+*.tgz
+*.log
+.DS_Store
+*.pem
+*.key
+*.pfx
+*.p12
+*.crt
+*.cer
+.env
+.env.*
+smoke/state/
+.wrangler/

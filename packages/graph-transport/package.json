@@ -1,0 +1,53 @@
+{
+  "name": "@missivus/graph-transport",
+  "version": "0.1.0",
+  "description": "Dependency-free Microsoft Graph mail transport for Node and Cloudflare Workers — application permissions, client credentials, one shared mailbox. Nodemailer adapter included.",
+  "license": "GPL-3.0-or-later",
+  "author": "Solvetus (https://solvetus.com)",
+  "homepage": "https://missivus.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Solvetus/missivus-ghost.git",
+    "directory": "packages/graph-transport"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./nodemailer": {
+      "types": "./dist/nodemailer.d.ts",
+      "default": "./dist/nodemailer.js"
+    },
+    "./node": {
+      "types": "./dist/node.d.ts",
+      "default": "./dist/node.js"
+    }
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "microsoft-graph",
+    "mail",
+    "email",
+    "nodemailer",
+    "transport",
+    "client-credentials",
+    "shared-mailbox",
+    "cloudflare-workers",
+    "missivus"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "node --test src/",
+    "prepack": "npm run build"
+  }
+}
