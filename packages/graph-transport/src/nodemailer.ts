@@ -105,7 +105,7 @@ function toAttachment(a: NodemailerAttachment): AttachmentInput {
     } else if (typeof a.content === 'string') {
         content = a.encoding === 'base64' ? decodeBase64(a.content) : a.content;
     } else {
-        content = a.content !== undefined ? String(a.content as unknown as string) : '';
+        content = a.content !== undefined ? String(a.content) : '';
     }
     const input: AttachmentInput = {
         name: typeof a.filename === 'string' ? a.filename : 'attachment',

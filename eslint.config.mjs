@@ -16,5 +16,15 @@ export default tseslint.config(
     {
         files: ['**/*.js', '**/*.mjs'],
         ...tseslint.configs.disableTypeChecked
+    },
+    {
+        // node:test's test() returns a promise the runner itself awaits.
+        files: ['**/*.test.ts', '**/test-support/**'],
+        rules: {
+            '@typescript-eslint/no-floating-promises': 'off',
+            // Tests deliberately over-guard index accesses and use async bodies for uniformity.
+            '@typescript-eslint/no-unnecessary-condition': 'off',
+            '@typescript-eslint/require-await': 'off'
+        }
     }
 );

@@ -74,7 +74,7 @@ export function createGraphTransport(options: GraphTransportOptions): GraphMaile
 
     const redactor = new Redactor(credentials.secretLiterals());
     const fetchFn: FetchLike = options.fetch
-        ?? (globalThis.fetch.bind(globalThis) as unknown as FetchLike);
+        ?? (globalThis.fetch.bind(globalThis));
     const now = options.now ?? (() => Date.now());
     const tokens = new TokenProvider(
         credentials,

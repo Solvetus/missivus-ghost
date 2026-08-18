@@ -63,7 +63,13 @@ test('send() resolves with an envelope on 202 and rejects with the Graph error o
     const info = await new Promise<unknown>((resolve, reject) => {
         transport.send(
             {data: {from: 'noreply@example.com', to: 'u@example.com', subject: 's', html: '<p>x</p>'}},
-            (err, result) => (err ? reject(err) : resolve(result))
+            (err, result) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(result);
+                }
+            }
         );
     });
     assert.equal((info as {response: string}).response, '202 Accepted by Microsoft Graph');

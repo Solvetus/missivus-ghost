@@ -107,9 +107,10 @@ export class TokenProvider {
             throw new GraphError('Missivus: the token response contained no access_token', response.status);
         }
 
-        const expiresIn = typeof payload['expires_in'] === 'number'
-            ? payload['expires_in']
-            : parseInt(String(payload['expires_in'] ?? '3600'), 10) || 3600;
+        const rawExpires = payload['expires_in'];
+        const expiresIn = typeof rawExpires === 'number'
+            ? rawExpires
+            : typeof rawExpires === 'string' ? (parseInt(rawExpires, 10) || 3600) : 3600;
         const ttl = expiresIn - EXPIRY_MARGIN_SECONDS;
         // A token shorter-lived than the margin is not worth caching, but it is still usable now.
         if (ttl > 0) {
