@@ -1,6 +1,6 @@
 {
   "name": "@missivus/graph-transport",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Dependency-free Microsoft Graph mail transport for Node and Cloudflare Workers — application permissions, client credentials, one shared mailbox. Nodemailer adapter included.",
   "license": "GPL-3.0-or-later",
   "author": "Solvetus (https://solvetus.com)",

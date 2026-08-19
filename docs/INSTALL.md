@@ -10,7 +10,7 @@ You will need:
 - Administrator access to your Ghost install, including a shell on the machine (or Docker host)
   that runs it.
 
-Set aside about thirty minutes. Nothing here is reversible-by-accident; every step can be undone.
+Set aside about an hour. Nothing here is reversible-by-accident; every step can be undone.
 
 Throughout, replace `example.com` with your own domain and `noreply@example.com` with whatever
 address you want Ghost's email to come from.
@@ -294,7 +294,7 @@ at. It needs Node 20 or newer.
 **On the Ghost host (ghost-cli / systemd installs):**
 
 ```bash
-npm install -g @missivus/ghost      # or: npm install -g ./missivus-ghost-0.1.0.tgz
+npm install -g @missivus/ghost      # or: npm install -g ./missivus-ghost-<version>.tgz
 missivus-ghost --ghost-config /var/www/ghost/config.production.json
 ```
 

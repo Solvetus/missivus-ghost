@@ -14,8 +14,10 @@ is much of the point of this design.
 
 ### Why not just configure SMTP?
 
-Microsoft retired basic-authentication SMTP for Microsoft 365, and Ghost's SMTP settings have no
-way to obtain OAuth tokens. The workarounds are an SMTP relay daemon between Ghost and Microsoft —
+Microsoft is retiring basic-authentication SMTP AUTH for Microsoft 365 — it is disabled by default
+for existing tenants from the end of December 2026, unavailable to new tenants from 2027, and the
+final removal date will be announced in 2027 — and Ghost's SMTP settings have no way to obtain
+OAuth tokens. The workarounds are an SMTP relay daemon between Ghost and Microsoft —
 one more service, usually delegated-auth — or tenant-level exceptions Microsoft is actively
 closing. Missivus talks to the Graph API with application permissions instead. (Yes, Ghost still
 *speaks* SMTP to the local shim — across localhost or a Docker network, not across the internet,

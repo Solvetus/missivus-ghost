@@ -5,6 +5,12 @@ All notable changes to Missivus for Ghost. The format follows
 [Semantic Versioning](https://semver.org/). Both packages
 (`@missivus/graph-transport`, `@missivus/ghost`) version together.
 
+## [0.1.1] — 2026-08-19
+
+### Fixed
+
+- docs: correct SMTP retirement timeline; stale version strings.
+
 ## [0.1.0] — 2026-08-18
 
 First release. The fourth Missivus platform, after
