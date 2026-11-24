@@ -5,6 +5,12 @@ All notable changes to Missivus for Ghost. The format follows
 [Semantic Versioning](https://semver.org/). Both packages
 (`@missivus/graph-transport`, `@missivus/ghost`) version together.
 
+## [Unreleased]
+
+### Changed
+
+- ci: the release workflow now creates the Release with GitHub's own gh CLI instead of the third-party softprops/action-gh-release (supply-chain hardening). No change to the plugin.
+
 ## [0.1.1] — 2026-08-19
 
 ### Fixed
